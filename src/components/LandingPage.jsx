@@ -10,7 +10,7 @@ const LandingPage = () => {
 
   useEffect(() => {
    
-    const experienceTarget = 2;
+    const experienceTarget = 1;
     const experienceInterval = setInterval(() => {
       setExperienceCount((prev) => (prev < experienceTarget ? prev + 1 : prev));
       if (experienceCount === experienceTarget) clearInterval(experienceInterval);

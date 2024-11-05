@@ -32,7 +32,7 @@ const About = () => {
           <div className="flex  justify-between items-center max-w-[70%]">
             <div className="flex items-center gap-2 flex-col text-center">
               <p className="md:text-3xl text-2xl font-bold font-jetBrains">
-                02+
+                01+
               </p>
               <p>
                 Years of <br />
