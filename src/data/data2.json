@@ -1,0 +1,100 @@
+
+     [
+      {
+        "category": "Experience",
+        "details": [
+          {
+            "title": "Frontend Developer",
+            "description": "Developed and implemented responsive web interfaces using HTML, CSS, JavaScript, and ReactJS. Collaborated with cross-functional teams to create user-friendly web applications.",
+            "company": "Aptech Computer Education",
+            "duration": "2 Years",
+            "year": "2022 - 2024",
+            "location": "Lagos, Nigeria"
+          },
+          {
+            "title": "UI/UX Designer",
+            "description": "Designed seamless user experiences and modern interfaces using Figma, Adobe XD, and design principles. Worked on wireframes, prototypes, and user-centered designs.",
+            "company": "Aptech Computer Education",
+            "duration": "1.5 Years",
+            "year": "2022 - 2023",
+            "location": "Lagos, Nigeria"
+          },
+          {
+            "title": "Graphics Designer",
+            "description": "Created digital and print designs, branding materials, and marketing assets. Expert in Adobe Photoshop, Illustrator, and InDesign.",
+            "company": "Global Techwiz",
+            "duration": "1 Year",
+            "year": "2023 - 2024",
+            "location": "Global Techwiz 2024"
+          }
+        ]
+      },
+      {
+        "category": "Education",
+        "details": [
+          {
+            "institution": "Aptech Computer Education",
+            "degree": "Diploma in Software Engineering",
+            "year": "2021 - 2024",
+            "location": "Lagos, Nigeria",
+            "description": "Focused on full-stack development, software engineering principles, and UI/UX design."
+          },
+          {
+            "institution": "Online Learning Platforms",
+            "degree": "Certification in UI/UX Design",
+            "year": "2022",
+            "location": "Remote",
+            "description": "Completed courses in UX Design from platforms like Udemy and Coursera. Specialized in user research, design systems, and prototyping."
+          },
+          {
+            "institution": "Aptech Computer Education",
+            "degree": "Certification in Frontend Development",
+            "year": "2021",
+            "location": "Lagos, Nigeria",
+            "description": "Specialized in HTML, CSS, JavaScript, and responsive web design."
+          }
+        ]
+      },
+      {
+        "category": "Skills",
+        "details": [
+          {
+            "name": "HTML & CSS",
+            "image": "/images/html-css.png",
+            "description": "Proficient in creating responsive and modern websites using HTML5 and CSS3."
+          },
+          {
+            "name": "JavaScript",
+            "image": "/images/javascript.png",
+            "description": "Strong experience in JavaScript, ES6, and DOM manipulation."
+          },
+          {
+            "name": "Tailwind CSS",
+            "image": "/images/tailwind.png",
+            "description": "Expertise in using Tailwind CSS for modern and fast UI development."
+          },
+          {
+            "name": "Bootstrap",
+            "image": "/images/bootstrap.png",
+            "description": "Experienced in building responsive and mobile-first web pages with Bootstrap."
+          },
+          {
+            "name": "ReactJS",
+            "image": "/images/reactjs.png",
+            "description": "Skilled in building dynamic web applications with React, hooks, and state management."
+          },
+          {
+            "name": "Node.js",
+            "image": "/images/nodejs.png",
+            "description": "Capable of building RESTful APIs and server-side applications using Node.js."
+          },
+          {
+            "name": "Java",
+            "image": "/images/java.png",
+            "description": "Experienced in object-oriented programming with Java for backend systems."
+          }
+        ]
+      }
+    ]
+  
+  

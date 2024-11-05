@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* styles.css */
+.rotating-border {
+    animation: rotate 15s linear infinite; 
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+
+  .stroke{
+    color: transparent;
+    -webkit-text-stroke: 1px #168DD2;
+  }
+
+  ::-webkit-scrollbar{
+    display: none;
+  }

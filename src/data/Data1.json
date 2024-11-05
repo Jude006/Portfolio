@@ -1,0 +1,49 @@
+ [
+      {
+        "id": 1,
+        "title": "Frontend Development",
+        "shortDescription": "Building responsive and functional user interfaces with modern technologies.",
+        "features": [
+          "Responsive web design across all devices",
+          "Interactive UI development using React.js",
+          "Integration with backend APIs",
+          "Ensuring fast load times and smooth performance",
+          "Cross-browser compatibility and accessibility",
+          "SEO best practices for improved visibility"
+        ],
+        "icon": "FaCode"
+       
+      },
+      {
+        "id": 2,
+        "title": "UI/UX Design",
+        "shortDescription": "Designing intuitive user experiences and aesthetically pleasing interfaces.",
+        "features": [
+          "User research and personal development",
+          "Wireframing and prototyping",
+          "Information architecture and navigation design",
+          "High-fidelity UI designs with attention to detail",
+          "Design systems and consistent branding",
+          "Usability testing to improve user flow"
+        ],
+        "icon": "FaPaintBrush"
+       
+      },
+      {
+        "id": 3,
+        "title": "Graphics Design",
+        "shortDescription": "Creating stunning visuals for your brand, from logos to promotional materials.",
+        "features": [
+          "Logo and brand identity design",
+          "Custom graphics for web, print, and social media",
+          "Business cards, brochures, and flyers",
+          "Social media posts and banner designs",
+          "Consistent visual branding across all media",
+          "Packaging design and promotional materials"
+        ],
+        "icon": "FaPalette"
+        
+      }
+    ]
+
+  
