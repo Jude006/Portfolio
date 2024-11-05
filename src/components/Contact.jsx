@@ -11,8 +11,8 @@ const Contact = () => {
           <h1 className="border-b-2 border-primary font-jetBrains text-3xl font-bold text-center inline-block">
             Contact Me
           </h1>
-        </div>
-        <div className="grid grid-cols-12 gap-10 py-14">
+        </div>;
+        <div className="grid grid-cols-12 md:gap-10 py-14">
           <form
             action="https://formspree.io/f/mldebdwz"
             method="POST"
