@@ -9,16 +9,16 @@ const Resume = () => {
       title: "Frontend Developer",
       description: "Developed and implemented responsive web interfaces using HTML, CSS, JavaScript, and ReactJS. Collaborated with cross-functional teams to create user-friendly web applications.",
       company: "Aptech Computer Education",
-      duration: "2 Years",
-      year: "2022 - 2024",
+      duration: "1 Years",
+      year: "2023 - 2024",
       location: "Lagos, Nigeria"
     },
     {
       title: "UI/UX Designer",
       description: "Designed seamless user experiences and modern interfaces using Figma, Adobe XD, and design principles. Worked on wireframes, prototypes, and user-centered designs.",
       company: "Aptech Computer Education",
-      duration: "1.5 Years",
-      year: "2022 - 2023",
+      duration: "1 Years",
+      year: "2023 - 2024",
       location: "Lagos, Nigeria"
     },
     {
@@ -35,21 +35,21 @@ const Resume = () => {
     {
       institution: "Aptech Computer Education",
       degree: "Diploma in Software Engineering",
-      year: "2021 - 2024",
+      year: "2023 - 2024",
       location: "Lagos, Nigeria",
       description: "Focused on full-stack development, software engineering principles, and UI/UX design."
     },
     {
       institution: "Online Learning Platforms",
       degree: "Certification in UI/UX Design",
-      year: "2022",
+      year: "2023",
       location: "Remote",
       description: "Completed courses in UX Design from platforms like Udemy and Coursera. Specialized in user research, design systems, and prototyping."
     },
     {
       institution: "Aptech Computer Education",
       degree: "Certification in Frontend Development",
-      year: "2021",
+      year: "2023",
       location: "Lagos, Nigeria",
       description: "Specialized in HTML, CSS, JavaScript, and responsive web design."
     }

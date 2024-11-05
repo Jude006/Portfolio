@@ -15,7 +15,7 @@ const Skills = () => {
   };
 
   const skillsData = [
-    { icon: <VscBracketDot />, title: "Frontend Developer", experience: "More than 2 years", percentage: 95 },
+    { icon: <VscBracketDot />, title: "Frontend Developer", experience: "More than 1 year", percentage: 95 },
     { icon: <VscSourceControl />, title: "Version Control", experience: "More than 1 year", percentage: 70 },
     { icon: <FiClipboard />, title: "Project Management", experience: "Over 2 months", percentage: 60 },
     { icon: <FaServer />, title: "Fullstack", experience: "More than 1 month", percentage: 50 },
