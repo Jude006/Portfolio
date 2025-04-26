@@ -1,12 +1,12 @@
 import React, { useRef, useState } from "react";
 import data from "../data/Data1.json";
-import { FaArrowCircleRight, FaCheck, FaCode, FaPaintBrush, FaPalette, FaTimes } from "react-icons/fa";
-import { motion } from "framer-motion"; // Import Framer Motion
+import { FaArrowCircleRight, FaCheck, FaCode, FaPaintBrush, FaTimes,FaMobileAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const iconMap = {
   FaCode: FaCode,
   FaPaintBrush: FaPaintBrush,
-  FaPalette: FaPalette,
+  FaMobileAlt:FaMobileAlt
 };
 
 const Service = () => {
@@ -44,14 +44,14 @@ const Service = () => {
       </motion.div>
 
       <motion.div
-        className="md:px-10 px-4 lg:px-20 lg:max-w-[70%] font-Poppins mx-auto grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-10 pb-10"
+        className="md:px-10 px-8 lg:px-20 lg:max-w-[70%] font-Poppins mx-auto grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-10 pb-10"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 1, delay: 0.3 }}
       >
         {data.map((service, index) => {
-          const IconComponent = iconMap[service.icon]; // Get the icon component dynamically
+          const IconComponent = iconMap[service.icon]; 
           return (
             <motion.div
               key={index}
@@ -86,7 +86,7 @@ const Service = () => {
           className="bg-black duration-300 ease-linear flex justify-center items-center transform bg-opacity-20 w-full h-screen inset-0 fixed backdrop-blur-sm z-20 top-0 cursor-pointer"
         >
           <motion.div
-            className="w-[50%] mx-auto flex flex-col gap-2"
+            className="md:w-[50%] w-[90%] mx-auto flex flex-col gap-2 md:mt-0 mt-14"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}

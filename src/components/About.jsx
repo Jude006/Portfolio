@@ -1,6 +1,6 @@
 import React from "react";
 import { FaMessage } from "react-icons/fa6";
-import { motion } from "framer-motion"; // Import Framer Motion
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
@@ -46,10 +46,13 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
           >
             <h1>
-              I’m a passionate frontend developer focused on building visually
-              <br /> appealing and responsive websites. With expertise in modern
-              <br /> web technologies, I create seamless user experiences that
-              <br /> balance aesthetics with performance.
+              I'm a passionate fullstack developer specializing in building
+              responsive web applications
+               and cross-platform mobile solutions. With expertise across
+              the development stack,
+               I create seamless digital experiences that combine robust
+              backends with intuitive
+               frontends and performant mobile interfaces.
             </h1>
           </motion.div>
 
@@ -61,7 +64,9 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.7 }}
           >
             <div className="flex items-center gap-2 flex-col text-center">
-              <p className="md:text-3xl text-2xl font-bold font-jetBrains">01+</p>
+              <p className="md:text-3xl text-2xl font-bold font-jetBrains">
+                01+
+              </p>
               <p>
                 Years of
                 <br />
@@ -69,7 +74,9 @@ const About = () => {
               </p>
             </div>
             <div className="flex items-center gap-2 flex-col text-center">
-              <p className="md:text-3xl text-2xl font-bold font-jetBrains">18</p>
+              <p className="md:text-3xl text-2xl font-bold font-jetBrains">
+                18
+              </p>
               <p>
                 Completed
                 <br />
@@ -77,7 +84,9 @@ const About = () => {
               </p>
             </div>
             <div className="flex items-center gap-2 flex-col text-center">
-              <p className="md:text-3xl text-2xl font-bold font-jetBrains">01</p>
+              <p className="md:text-3xl text-2xl font-bold font-jetBrains">
+                01
+              </p>
               <p>
                 Companies
                 <br />

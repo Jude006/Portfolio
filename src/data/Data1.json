@@ -1,49 +1,44 @@
- [
-      {
-        "id": 1,
-        "title": "Frontend Development",
-        "shortDescription": "Building responsive and functional user interfaces with modern technologies.",
-        "features": [
-          "Responsive web design across all devices",
-          "Interactive UI development using React.js",
-          "Integration with backend APIs",
-          "Ensuring fast load times and smooth performance",
-          "Cross-browser compatibility and accessibility",
-          "SEO best practices for improved visibility"
-        ],
-        "icon": "FaCode"
-       
-      },
-      {
-        "id": 2,
-        "title": "UI/UX Design",
-        "shortDescription": "Designing intuitive user experiences and aesthetically pleasing interfaces.",
-        "features": [
-          "User research and personal development",
-          "Wireframing and prototyping",
-          "Information architecture and navigation design",
-          "High-fidelity UI designs with attention to detail",
-          "Design systems and consistent branding",
-          "Usability testing to improve user flow"
-        ],
-        "icon": "FaPaintBrush"
-       
-      },
-      {
-        "id": 3,
-        "title": "Graphics Design",
-        "shortDescription": "Creating stunning visuals for your brand, from logos to promotional materials.",
-        "features": [
-          "Logo and brand identity design",
-          "Custom graphics for web, print, and social media",
-          "Business cards, brochures, and flyers",
-          "Social media posts and banner designs",
-          "Consistent visual branding across all media",
-          "Packaging design and promotional materials"
-        ],
-        "icon": "FaPalette"
-        
-      }
-    ]
-
-  
+[
+  {
+    "id": 1,
+    "title": "Fullstack Development",
+    "shortDescription": "End-to-end web application development with both frontend and backend technologies.",
+    "features": [
+      "Responsive UI development with React.js/Next.js",
+      "Server-side development with Node.js/Express",
+      "Database design and implementation (SQL/MongoDb)",
+      "RESTful API development and integration",
+      "Authentication and authorization systems",
+      "Performance optimization and security best practices"
+    ],
+    "icon": "FaCode"
+  },
+  {
+    "id": 2,
+    "title": "Mobile App Development",
+    "shortDescription": "Building cross-platform mobile applications with native performance.",
+    "features": [
+      "React Native development for iOS/Android",
+      "Native module integration when needed",
+      "Mobile UI/UX best practices",
+      "Offline functionality and data synchronization",
+      "App store deployment and optimization",
+      "Performance tuning for mobile devices"
+    ],
+    "icon": "FaMobileAlt"
+  },
+  {
+    "id": 3,
+    "title": "UI/UX Design",
+    "shortDescription": "Creating intuitive user experiences with modern design principles.",
+    "features": [
+      "User research and persona development",
+      "Wireframing and interactive prototyping",
+      "Responsive design systems",
+      "Accessibility compliance (WCAG)",
+      "Design-to-development handoff",
+      "Usability testing and iteration"
+    ],
+    "icon": "FaPaintBrush"
+  }
+]

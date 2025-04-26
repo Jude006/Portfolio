@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaChevronDown, FaServer } from 'react-icons/fa';
+import { FaChevronDown, FaMobileAlt, FaSearchDollar, FaServer } from 'react-icons/fa';
 import { FiClipboard } from 'react-icons/fi';
 import { MdAnimation } from 'react-icons/md';
 import { VscBracketDot, VscSourceControl } from 'react-icons/vsc';
@@ -15,11 +15,12 @@ const Skills = () => {
   };
 
   const skillsData = [
-    { icon: <VscBracketDot />, title: "Frontend Developer", experience: "More than 1 year", percentage: 95 },
+    { icon: <VscBracketDot />, title: "Frontend Development", experience: "More than 1 year", percentage: 95 },
     { icon: <VscSourceControl />, title: "Version Control", experience: "More than 1 year", percentage: 70 },
-    { icon: <FiClipboard />, title: "Project Management", experience: "Over 2 months", percentage: 60 },
-    { icon: <FaServer />, title: "Fullstack", experience: "More than 1 month", percentage: 50 },
-    { icon: <MdAnimation />, title: "Animation Frameworks", experience: "More than 6 months", percentage: 75 },
+    { icon: <FaMobileAlt />, title: "Mobile Development", experience: "More than 6 months", percentage: 65 },
+    { icon: <FaSearchDollar />, title: "SEO Optimization", experience: "More than 1 year", percentage: 60 },
+    { icon: <FaServer />, title: "Backend Development", experience: "More than 6 month", percentage: 50 },
+    { icon: <MdAnimation />, title: "Animation Frameworks", experience: "More than 1 year", percentage: 75 }
   ];
 
   return (

@@ -56,12 +56,16 @@ const Resume = () => {
   ];
 
   const skillsData = [
-    { name: "HTML & CSS", image: "/images/html.png", description: "Proficient in creating responsive and modern websites using HTML5 and CSS3." },
-    { name: "JavaScript", image: "/images/javascript.png", description: "Strong experience in JavaScript, ES6, and DOM manipulation." },
-    { name: "Tailwind CSS", image: "/images/tailwind.png", description: "Expertise in using Tailwind CSS for modern and fast UI development." },
-    { name: "ReactJS", image: "/images/react.png", description: "Skilled in building dynamic web applications with React, hooks, and state management." },
-    { name: "Node.js", image: "/images/node.png", description: "Capable of building RESTful APIs and server-side applications using Node.js." },
-    { name: "Java", image: "/images/java.jpg", description: "Experienced in object-oriented programming with Java for backend systems." }
+      { name: "HTML & CSS", image: "/images/html.png", description: "Proficient in creating responsive and modern websites using HTML5 and CSS3." },
+      { name: "JavaScript", image: "/images/javascript.png", description: "Strong experience in JavaScript, ES6, and DOM manipulation." },
+      { name: "Tailwind CSS", image: "/images/tailwind.png", description: "Expertise in using Tailwind CSS for modern and fast UI development." },
+      { name: "ReactJS", image: "/images/react.png", description: "Skilled in building dynamic web applications with React, hooks, and state management." },
+      { name: "Node.js", image: "/images/node.png", description: "Capable of building RESTful APIs and server-side applications using Node.js." },
+      { name: "Java", image: "/images/java.jpg", description: "Experienced in object-oriented programming with Java for backend systems." },
+      { name: "Dart", image: "/images/dart.jpg", description: "Proficient in Dart programming for building cross-platform mobile applications." },
+      { name: "Flutter", image: "/images/flutter.png", description: "Expert in developing high-performance mobile apps for Android and iOS using Flutter." },
+      { name: "React Native", image: "/images/react-native.webp", description: "Skilled in creating native mobile applications using React Native framework." },
+      { name: "Next.js", image: "/images/nextjs.webp", description: "Experienced in building server-side rendered and static websites with Next.js." }
   ];
 
   const renderContent = () => {
@@ -106,7 +110,7 @@ const Resume = () => {
         transition={{ duration: 0.5 }}
       >
         <div className="flex-shrink-0">
-          <img src={skill.image} alt={skill.name} className="h-20 w-20 object-cover rounded-full" />
+          <img src={skill.image} alt={skill.name} className="h-20 w-20 object-cover object-center rounded-full" />
         </div>
         <div className="flex flex-col">
           <h3 className="text-lg font-semibold font-jetBrains">{skill.name}</h3>

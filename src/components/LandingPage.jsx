@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion"; // Import Framer Motion
+import { motion } from "framer-motion";
 import { FaDownload, FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const LandingPage = () => {
@@ -21,7 +21,7 @@ const LandingPage = () => {
       if (commitCount === commitTarget) clearInterval(commitInterval);
     }, 45);
 
-    const technologiesTarget = 7;
+    const technologiesTarget = 10; // Changed from 7 to 10
     const technologiesInterval = setInterval(() => {
       setTechnologiesCount((prev) => (prev < technologiesTarget ? prev + 1 : prev));
       if (technologiesCount === technologiesTarget) clearInterval(technologiesInterval);
@@ -68,7 +68,7 @@ const LandingPage = () => {
             </div>
             <div className="flex flex-col gap-3">
               <h1 className="md:text-3xl text-2xl font-jetBrains font-bold tracking-tighter">
-                Frontend Developer
+                Full Stack & Mobile Developer
               </h1>
               <p className="md:text-5xl text-3xl font-jetBrains font-bold tracking-tighter w-full">
                 Hello I'm{" "}
@@ -76,7 +76,7 @@ const LandingPage = () => {
               <p className="md:text-5xl text-3xl font-jetBrains font-bold tracking-tighter w-full text-primary stroke">
                 Jude Orifa
               </p>
-              <p className="font-Poppins capitalize">I’m a front-end developer specializing in creating dynamic, responsive web applications with intuitive user interfaces, while continuously advancing my expertise in full-stack development</p>
+              <p className="font-Poppins capitalize">I develop responsive full-stack web apps and native mobile solutions with SEO optimization and intuitive UI/UX, delivering high-performance digital experiences across all platforms.</p>
               <div>
                 <button className="flex gap-2 items-center font-jetBrains py-3 px-6 border-2 border-primary rounded">Download Cv <span className="text-xl"><FaDownload /></span></button>
               </div>

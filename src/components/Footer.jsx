@@ -1,5 +1,5 @@
 import React from "react";
-import { FaMessage } from "react-icons/fa6";
+import { FaGithub, FaMessage } from "react-icons/fa6";
 import { FaDownload, FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Link } from "react-scroll";
 
@@ -43,6 +43,7 @@ const Footer = () => {
                 <a href="https://web.facebook.com/profile.php?id=61566629853803"><p><FaFacebook /></p></a>
                <a href="https://www.linkedin.com/in/jude-orifa-95127b330/"><p><FaLinkedin /></p></a>
                 <a href="https://x.com/orifa_jude"><p><FaTwitter /></p></a>
+                <a href="https://github.com/Jude006"><p><FaGithub /></p></a>
             </div>
         <div className="w-full">
             <h1 className="font-jetBrains textx-l font-bold text-start w-full capitalize flex items-center gap-2">Send Us a message <FaMessage /></h1>
