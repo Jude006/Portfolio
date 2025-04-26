@@ -44,7 +44,7 @@ const Resume = () => {
       degree: "Certification in UI/UX Design",
       year: "2023",
       location: "Remote",
-      description: "Completed courses in UX Design from platforms like Udemy and Coursera. Specialized in user research, design systems, and prototyping."
+      description: "Completed courses in UX Design from platform like Udemy . Specialized in user research, design systems, and prototyping."
     },
     {
       institution: "Aptech Computer Education",
