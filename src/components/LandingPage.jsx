@@ -93,9 +93,9 @@ const LandingPage = () => {
           >
             <div className="rotating-border h-full w-full border-dashed rounded-full border-2 border-primary"></div>
             <img 
-              src="/images/img.jpg" 
+              src="/images/Jude.jpeg" 
               alt="Static Image" 
-              className='absolute w-full h-full object-cover rounded-full p-6'
+              className='absolute w-full h-full object-cover rounded-full p-1'
             />
           </motion.div>
         </div>

@@ -7,8 +7,16 @@ import { FaArrowAltCircleRight, FaArrowCircleLeft, FaGithub } from "react-icons/
 
 const projects = [
   {
-    title: "Honey Guide",
+    title: "Trip Tracker",
     number: "01",
+    description: "A trip tracker app developed to track and manage user trips,calculate expenses with ai assistant",
+    img: "/images/triptrack.png",
+    technologies: 'HTML, JavaScript, React, and Tailwind,Node,Express,mongoDb',
+    link: "https://trip-track-frontend.vercel.app/",
+  },
+  {
+    title: "Honey Guide",
+    number: "02",
     description: "A travel website developed for my first job, providing users with essential travel information and resources.",
     img: "/images/guide.png",
     technologies: 'HTML, JavaScript, React, and Tailwind',
@@ -16,15 +24,23 @@ const projects = [
   },
   {
     title: "Alberto Watch",
-    number: "02",
+    number: "03",
     description: "My first React project, showcasing a sleek watch catalog with an engaging user interface.",
     img: "/images/watch1.png",
     technologies: 'HTML, JavaScript, React, and Tailwind',
     link: "https://my-watch-five.vercel.app/",
   },
   {
+    title: "School Dashboard",
+    number: "04",
+    description: "A web application desgined to manage student activities",
+    img: "/images/Dashboard.png",
+    technologies: 'HTML, JavaScript, React, and Tailwind',
+    link: "https://school-admin-dashboard-47xp.vercel.app/",
+  },
+  {
     title: "JWebLearn",
-    number: "03",
+    number: "05",
     description: "A web application where users can explore various tech courses and register for detailed information on tech professions.",
     img: "/images/learn.png",
     technologies: 'HTML, JavaScript, React, and Tailwind',
@@ -32,7 +48,7 @@ const projects = [
   },
   {
     title: "Alberto Store",
-    number: "04",
+    number: "06",
     description: "A project from APTECH Computer Education in India, this e-commerce website offers a range of products with a focus on user-friendly navigation.",
     img: "/images/watch2.png",
     technologies: 'HTML, JavaScript, and Tailwind',
@@ -40,7 +56,7 @@ const projects = [
   },
   {
     title: "JPlants",
-    number: "05",
+    number: "07",
     description: "An application that allows users to browse and purchase a variety of plants, complete with a shopping cart feature for easy transactions.",
     img: "/images/plant.png",
     technologies: 'HTML, JavaScript, React, and Tailwind',
@@ -48,7 +64,7 @@ const projects = [
   },
   {
     title: "Travel Smart",
-    number: "06",
+    number: "08",
     description: "Built for the Global Tech Wiz event, this application helps users plan their travels effectively with user-friendly tools and resources.",
     img: "/images/travel.png",
     technologies: 'HTML, JavaScript, and Tailwind',
@@ -56,7 +72,7 @@ const projects = [
   },
   {
     title: "Jude Auto Hub",
-    number: "07",
+    number: "09",
     description: "My first project using Tailwind CSS, this website allows users to book mechanics for car repairs and purchase various auto parts easily.",
     img: "/images/auto.png",
     technologies: 'HTML, JavaScript, and Tailwind',
@@ -65,7 +81,7 @@ const projects = [
 ];
 
 const Projects = () => {
-  const swiperRef = React.useRef(null); // Create a reference for the Swiper
+  const swiperRef = React.useRef(null); 
 
   return (
     <div className="md:px-8 px-4 py-16">
