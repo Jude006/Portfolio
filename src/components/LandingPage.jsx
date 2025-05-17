@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaDownload, FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
+import resume from "../assets/images/Jude resume.pdf";
 
 const LandingPage = () => {
   const [experienceCount, setExperienceCount] = useState(0);
@@ -12,7 +13,8 @@ const LandingPage = () => {
     const experienceTarget = 1;
     const experienceInterval = setInterval(() => {
       setExperienceCount((prev) => (prev < experienceTarget ? prev + 1 : prev));
-      if (experienceCount === experienceTarget) clearInterval(experienceInterval);
+      if (experienceCount === experienceTarget)
+        clearInterval(experienceInterval);
     }, 500);
 
     const commitTarget = 44;
@@ -21,10 +23,13 @@ const LandingPage = () => {
       if (commitCount === commitTarget) clearInterval(commitInterval);
     }, 45);
 
-    const technologiesTarget = 10; // Changed from 7 to 10
+    const technologiesTarget = 10;
     const technologiesInterval = setInterval(() => {
-      setTechnologiesCount((prev) => (prev < technologiesTarget ? prev + 1 : prev));
-      if (technologiesCount === technologiesTarget) clearInterval(technologiesInterval);
+      setTechnologiesCount((prev) =>
+        prev < technologiesTarget ? prev + 1 : prev
+      );
+      if (technologiesCount === technologiesTarget)
+        clearInterval(technologiesInterval);
     }, 150);
 
     const projectsTarget = 18;
@@ -42,10 +47,10 @@ const LandingPage = () => {
   }, [experienceCount, commitCount, technologiesCount, projectsCount]);
 
   return (
-    <motion.section 
+    <motion.section
       className="relative"
-      initial={{ opacity: 0 }} 
-      animate={{ opacity: 1 }} 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
       <motion.div
@@ -62,9 +67,21 @@ const LandingPage = () => {
             transition={{ duration: 1, delay: 0.4 }}
           >
             <div className="text-primary text-2xl cursor-pointer flex flex-col justify-center gap-5">
-              <a href="https://web.facebook.com/profile.php?id=61566629853803"><p><FaFacebook /></p></a>
-              <a href="https://www.linkedin.com/in/jude-orifa-95127b330/"><p><FaLinkedin /></p></a>
-              <a href="https://x.com/orifa_jude"><p><FaTwitter /></p></a>
+              <a href="https://web.facebook.com/profile.php?id=61566629853803">
+                <p>
+                  <FaFacebook />
+                </p>
+              </a>
+              <a href="https://www.linkedin.com/in/jude-orifa-95127b330/">
+                <p>
+                  <FaLinkedin />
+                </p>
+              </a>
+              <a href="https://x.com/orifa_jude">
+                <p>
+                  <FaTwitter />
+                </p>
+              </a>
             </div>
             <div className="flex flex-col gap-3">
               <h1 className="md:text-3xl text-2xl font-jetBrains font-bold tracking-tighter">
@@ -76,14 +93,23 @@ const LandingPage = () => {
               <p className="md:text-5xl text-3xl font-jetBrains font-bold tracking-tighter w-full text-primary stroke">
                 Jude Orifa
               </p>
-              <p className="font-Poppins capitalize">I develop responsive full-stack web apps and native mobile solutions with SEO optimization and intuitive UI/UX, delivering high-performance digital experiences across all platforms.</p>
-              <div>
-                <button className="flex gap-2 items-center font-jetBrains py-3 px-6 border-2 border-primary rounded">Download Cv <span className="text-xl"><FaDownload /></span></button>
-              </div>
+              <p className="font-Poppins capitalize">
+                I develop responsive full-stack web apps and native mobile
+                solutions with SEO optimization and intuitive UI/UX, delivering
+                high-performance digital experiences across all platforms.
+              </p>
+              <Link to={resume}>
+                <button className="flex gap-2 items-center font-jetBrains py-3 px-6 border-2 border-primary rounded">
+                  Download Resume{" "}
+                  <span className="text-xl">
+                    <FaDownload />
+                  </span>
+                </button>
+              </Link>
             </div>
           </motion.div>
         </div>
-
+ 
         <div className="md:col-span-5 col-span-12 flex w-full md:order-2 order-1 overflow-hidden md:justify-start justify-center">
           <motion.div
             className="relative h-[300px] w-[300px] flex items-center justify-center"
@@ -92,10 +118,10 @@ const LandingPage = () => {
             transition={{ duration: 1, delay: 0.6 }}
           >
             <div className="rotating-border h-full w-full border-dashed rounded-full border-2 border-primary"></div>
-            <img 
-              src="/images/Jude.jpeg" 
-              alt="Static Image" 
-              className='absolute w-full h-full object-cover rounded-full p-1'
+            <img
+              src="/images/Jude.jpeg"
+              alt="Static Image"
+              className="absolute w-full h-full object-cover rounded-full p-1"
             />
           </motion.div>
         </div>
@@ -108,20 +134,36 @@ const LandingPage = () => {
         transition={{ duration: 1, delay: 0.8 }}
       >
         <div className="flex gap-2 items-center">
-          <p className="md:text-5xl text-3xl font-jetBrains font-bold text-primary stroke">{experienceCount}</p>
-          <p className="text-lg">Years Of <br /> Experience</p>
+          <p className="md:text-5xl text-3xl font-jetBrains font-bold text-primary stroke">
+            {experienceCount}
+          </p>
+          <p className="text-lg">
+            Years Of <br /> Experience
+          </p>
         </div>
         <div className="flex gap-2 items-center">
-          <p className="md:text-5xl text-3xl font-jetBrains font-bold text-primary stroke">{commitCount}</p>
-          <p className="text-lg">Code <br /> Commits</p>
+          <p className="md:text-5xl text-3xl font-jetBrains font-bold text-primary stroke">
+            {commitCount}
+          </p>
+          <p className="text-lg">
+            Code <br /> Commits
+          </p>
         </div>
         <div className="flex gap-2 items-center">
-          <p className="md:text-5xl text-3xl font-jetBrains font-bold text-primary stroke">{technologiesCount}</p>
-          <p className="text-lg">Technologies <br /> Mastered</p>
+          <p className="md:text-5xl text-3xl font-jetBrains font-bold text-primary stroke">
+            {technologiesCount}
+          </p>
+          <p className="text-lg">
+            Technologies <br /> Mastered
+          </p>
         </div>
         <div className="flex gap-2 items-center">
-          <p className="md:text-5xl text-3xl font-jetBrains font-bold text-primary stroke">{projectsCount}</p>
-          <p className="text-lg">Projects <br /> Completed</p>
+          <p className="md:text-5xl text-3xl font-jetBrains font-bold text-primary stroke">
+            {projectsCount}
+          </p>
+          <p className="text-lg">
+            Projects <br /> Completed
+          </p>
         </div>
       </motion.div>
     </motion.section>
