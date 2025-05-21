@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaDownload, FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 import resume from "../assets/images/Jude resume.pdf";
+// import {Link} from 'react-router-dom'
 
 const LandingPage = () => {
   const [experienceCount, setExperienceCount] = useState(0);
@@ -29,7 +30,7 @@ const LandingPage = () => {
         prev < technologiesTarget ? prev + 1 : prev
       );
       if (technologiesCount === technologiesTarget)
-        clearInterval(technologiesInterval);
+        clearInterval(technologiesInterval);  
     }, 150);
 
     const projectsTarget = 18;
@@ -98,14 +99,14 @@ const LandingPage = () => {
                 solutions with SEO optimization and intuitive UI/UX, delivering
                 high-performance digital experiences across all platforms.
               </p>
-              <Link to={resume}>
+              <a href={resume}>
                 <button className="flex gap-2 items-center font-jetBrains py-3 px-6 border-2 border-primary rounded">
                   Download Resume{" "}
                   <span className="text-xl">
                     <FaDownload />
                   </span>
                 </button>
-              </Link>
+              </a>
             </div>
           </motion.div>
         </div>
