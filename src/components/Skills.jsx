@@ -17,9 +17,9 @@ const Skills = () => {
   const skillsData = [
     { icon: <VscBracketDot />, title: "Frontend Development", experience: "More than 2 year", percentage: 95 },
     { icon: <VscSourceControl />, title: "Version Control", experience: "More than 1 year", percentage: 70 },
-    { icon: <FaMobileAlt />, title: "Mobile Development", experience: "More than 1 months", percentage: 65 },
+    { icon: <FaMobileAlt />, title: "Mobile Development", experience: "More than 1 year", percentage: 65 },
     { icon: <FaSearchDollar />, title: "SEO Optimization", experience: "More than 1 year", percentage: 60 },
-    { icon: <FaServer />, title: "Backend Development", experience: "More than 6 month", percentage: 50 },
+    { icon: <FaServer />, title: "Backend Development", experience: "More than 1 year", percentage: 50 },
     { icon: <MdAnimation />, title: "Animation Frameworks", experience: "More than 2 year", percentage: 75 }
   ];
 
