@@ -4,22 +4,22 @@ import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <section className="md:px-10 lg:px-24 py-24 px-4 bg-tertiary">
+    <section className="px-4 py-24 md:px-10 lg:px-24 bg-tertiary">
       <motion.div
-        className="flex flex-col gap-3 justify-center"
+        className="flex flex-col justify-center gap-3"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
       >
-        <h1 className="font-jetBrains text-4xl font-bold text-center border-b-2 border-primary inline-block mx-auto">
+        <h1 className="inline-block mx-auto text-4xl font-bold text-center border-b-2 font-jetBrains border-primary">
           About Me
         </h1>
-        <p className="text-center font-Poppins text-lg">My Introduction</p>
+        <p className="text-lg text-center font-Poppins">My Introduction</p>
       </motion.div>
 
       <motion.div
-        className="grid grid-cols-12 gap-6 py-14 md:px-16 lg:px-32 px-4"
+        className="grid grid-cols-12 gap-6 px-4 py-14 md:px-16 lg:px-32"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -29,7 +29,7 @@ const About = () => {
           <motion.img
             src="/images/about.png"
             alt="About me"
-            className="md:object-cover object-center rounded-t bg-primary"
+            className="object-center rounded-t md:object-cover bg-primary"
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             viewport={{ once: true }}
@@ -37,9 +37,9 @@ const About = () => {
           />
         </div>
 
-        <div className="md:col-span-8 col-span-12 md:p-4 font-Poppins flex flex-col gap-6">
+        <div className="flex flex-col col-span-12 gap-6 md:col-span-8 md:p-4 font-Poppins">
           <motion.div
-            className="font-Poppins capitalize"
+            className="capitalize font-Poppins"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -63,33 +63,33 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.7 }}
           >
-            <div className="flex items-center gap-2 flex-col text-center">
-              <p className="md:text-3xl text-2xl font-bold font-jetBrains">
-                01+
+            <div className="flex flex-col items-center gap-2 text-center">
+              <p className="text-2xl font-bold md:text-3xl font-jetBrains">
+                02+
               </p>
               <p>
-                Years of
+                Years of  
                 <br />
-                Experience
+                Experience 
               </p>
-            </div>
-            <div className="flex items-center gap-2 flex-col text-center">
-              <p className="md:text-3xl text-2xl font-bold font-jetBrains">
+            </div> 
+            <div className="flex flex-col items-center gap-2 text-center">
+              <p className="text-2xl font-bold md:text-3xl font-jetBrains">
                 18
               </p>
-              <p>
+              <p> 
                 Completed
                 <br />
                 Projects
               </p>
             </div>
-            <div className="flex items-center gap-2 flex-col text-center">
-              <p className="md:text-3xl text-2xl font-bold font-jetBrains">
-                01
+            <div className="flex flex-col items-center gap-2 text-center">
+              <p className="text-2xl font-bold md:text-3xl font-jetBrains">
+                02
               </p>
               <p>
-                Companies
-                <br />
+                Companies 
+                <br /> 
                 Worked
               </p>
             </div>
@@ -101,7 +101,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.9 }}
           >
-            <button className="border-2 font-bold flex items-center gap-3 font-jetBrains border-primary rounded py-3 px-6">
+            <button className="flex items-center gap-3 px-6 py-3 font-bold border-2 rounded font-jetBrains border-primary">
               Contact me <FaMessage />
             </button>
           </motion.div>

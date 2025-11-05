@@ -11,7 +11,7 @@ const LandingPage = () => {
   const [projectsCount, setProjectsCount] = useState(0);
 
   useEffect(() => {
-    const experienceTarget = 1;
+    const experienceTarget = 2;
     const experienceInterval = setInterval(() => {
       setExperienceCount((prev) => (prev < experienceTarget ? prev + 1 : prev));
       if (experienceCount === experienceTarget)
@@ -55,19 +55,19 @@ const LandingPage = () => {
       transition={{ duration: 0.5 }}
     >
       <motion.div
-        className="bg-tertiary grid grid-cols-12 py-16"
+        className="grid grid-cols-12 py-16 bg-tertiary"
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.2 }}
       >
-        <div className="md:col-span-7 col-span-12 lg:px-28 px-4 md:order-1 order-2 md:mt-0 mt-10">
+        <div className="order-2 col-span-12 px-4 mt-10 md:col-span-7 lg:px-28 md:order-1 md:mt-0">
           <motion.div
             className="flex gap-10"
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
-            <div className="text-primary text-2xl cursor-pointer flex flex-col justify-center gap-5">
+            <div className="flex flex-col justify-center gap-5 text-2xl cursor-pointer text-primary">
               <a href="https://web.facebook.com/profile.php?id=61566629853803">
                 <p>
                   <FaFacebook />
@@ -85,22 +85,22 @@ const LandingPage = () => {
               </a>
             </div>
             <div className="flex flex-col gap-3">
-              <h1 className="md:text-3xl text-2xl font-jetBrains font-bold tracking-tighter">
+              <h1 className="text-2xl font-bold tracking-tighter md:text-3xl font-jetBrains">
                 Full Stack & Mobile Developer
               </h1>
-              <p className="md:text-5xl text-3xl font-jetBrains font-bold tracking-tighter w-full">
+              <p className="w-full text-3xl font-bold tracking-tighter md:text-5xl font-jetBrains">
                 Hello I'm{" "}
               </p>
-              <p className="md:text-5xl text-3xl font-jetBrains font-bold tracking-tighter w-full text-primary stroke">
+              <p className="w-full text-3xl font-bold tracking-tighter md:text-5xl font-jetBrains text-primary stroke">
                 Jude Orifa
               </p>
-              <p className="font-Poppins capitalize">
+              <p className="capitalize font-Poppins">
                 I develop responsive full-stack web apps and native mobile
                 solutions with SEO optimization and intuitive UI/UX, delivering
                 high-performance digital experiences across all platforms.
               </p>
               <a href={resume}>
-                <button className="flex gap-2 items-center font-jetBrains py-3 px-6 border-2 border-primary rounded">
+                <button className="flex items-center gap-2 px-6 py-3 border-2 rounded font-jetBrains border-primary">
                   Download Resume{" "}
                   <span className="text-xl">
                     <FaDownload />
@@ -111,55 +111,55 @@ const LandingPage = () => {
           </motion.div>
         </div>
  
-        <div className="md:col-span-5 col-span-12 flex w-full md:order-2 order-1 overflow-hidden md:justify-start justify-center">
+        <div className="flex justify-center order-1 w-full col-span-12 overflow-hidden md:col-span-5 md:order-2 md:justify-start">
           <motion.div
             className="relative h-[300px] w-[300px] flex items-center justify-center"
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
           >
-            <div className="rotating-border h-full w-full border-dashed rounded-full border-2 border-primary"></div>
+            <div className="w-full h-full border-2 border-dashed rounded-full rotating-border border-primary"></div>
             <img
               src="/images/Jude.jpeg"
               alt="Static Image"
-              className="absolute w-full h-full object-cover rounded-full p-1"
+              className="absolute object-cover w-full h-full p-1 rounded-full"
             />
           </motion.div>
         </div>
       </motion.div>
 
       <motion.div
-        className="bg-tertiary py-10 grid md:grid-cols-4 grid-cols-2 gap-4 md:px-28 justify-around px-4 w-full font-Poppins"
+        className="grid justify-around w-full grid-cols-2 gap-4 px-4 py-10 bg-tertiary md:grid-cols-4 md:px-28 font-Poppins"
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1, delay: 0.8 }}
       >
-        <div className="flex gap-2 items-center">
-          <p className="md:text-5xl text-3xl font-jetBrains font-bold text-primary stroke">
+        <div className="flex items-center gap-2">
+          <p className="text-3xl font-bold md:text-5xl font-jetBrains text-primary stroke">
             {experienceCount}
           </p>
           <p className="text-lg">
             Years Of <br /> Experience
           </p>
         </div>
-        <div className="flex gap-2 items-center">
-          <p className="md:text-5xl text-3xl font-jetBrains font-bold text-primary stroke">
+        <div className="flex items-center gap-2">
+          <p className="text-3xl font-bold md:text-5xl font-jetBrains text-primary stroke">
             {commitCount}
           </p>
           <p className="text-lg">
             Code <br /> Commits
           </p>
         </div>
-        <div className="flex gap-2 items-center">
-          <p className="md:text-5xl text-3xl font-jetBrains font-bold text-primary stroke">
+        <div className="flex items-center gap-2">
+          <p className="text-3xl font-bold md:text-5xl font-jetBrains text-primary stroke">
             {technologiesCount}
           </p>
           <p className="text-lg">
             Technologies <br /> Mastered
           </p>
         </div>
-        <div className="flex gap-2 items-center">
-          <p className="md:text-5xl text-3xl font-jetBrains font-bold text-primary stroke">
+        <div className="flex items-center gap-2">
+          <p className="text-3xl font-bold md:text-5xl font-jetBrains text-primary stroke">
             {projectsCount}
           </p>
           <p className="text-lg">

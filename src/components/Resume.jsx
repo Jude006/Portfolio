@@ -9,26 +9,20 @@ const Resume = () => {
       title: "Frontend Developer",
       description: "Developed and implemented responsive web interfaces using HTML, CSS, JavaScript, and ReactJS. Collaborated with cross-functional teams to create user-friendly web applications.",
       company: "Aptech Computer Education",
-      duration: "1 Years",
-      year: "2023 - 2024",
       location: "Lagos, Nigeria"
     },
+{
+  title: "Technical Instructor",
+  description: "Instructed students in frontend and backend development technologies including HTML, CSS, JavaScript, React, Node.js, Express, and MongoDB.",
+  company: "Aptech Computer Education", 
+  location: "Lagos, Nigeria"
+},
     {
-      title: "UI/UX Designer",
-      description: "Designed seamless user experiences and modern interfaces using Figma, Adobe XD, and design principles. Worked on wireframes, prototypes, and user-centered designs.",
-      company: "Aptech Computer Education",
-      duration: "1 Years",
-      year: "2023 - 2024",
-      location: "Lagos, Nigeria"
-    },
-    {
-      title: "Graphics Designer",
-      description: "Created digital and print designs, branding materials, and marketing assets. Expert in Adobe Photoshop, Illustrator, and InDesign.",
-      company: "Online Learning Platform",
-      duration: "1 Year",
-      year: "2023 - 2024",
-      location: "Global Techwiz 2024"
-    }
+  title: "Mobile App Developer",
+  description: "Developed cross-platform mobile applications using Flutter . Built responsive mobile interfaces and integrated with backend services.",
+  company: "Pm E-commerce",
+ location: "Freelance Project"
+}
   ];
 
   const educationData = [
@@ -103,14 +97,14 @@ const Resume = () => {
       return skillsData.map((skill, index) => (
         <motion.div 
         key={index} 
-        className="mb-4 flex items-center gap-6 bg-secondary p-4 rounded-lg border-b-2 border-primary"
+        className="flex items-center gap-6 p-4 mb-4 border-b-2 rounded-lg bg-secondary border-primary"
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -50 }}
         transition={{ duration: 0.5 }}
       >
         <div className="flex-shrink-0">
-          <img src={skill.image} alt={skill.name} className="h-20 w-20 object-cover object-center rounded-full" />
+          <img src={skill.image} alt={skill.name} className="object-cover object-center w-20 h-20 rounded-full" />
         </div>
         <div className="flex flex-col">
           <h3 className="text-lg font-semibold font-jetBrains">{skill.name}</h3>
@@ -123,13 +117,13 @@ const Resume = () => {
 
   return (
     <section className='py-20'>
-      <div className='w-full flex justify-center'>
-        <h1 className='text-center text-3xl font-bold font-jetBrains border-b-2 border-primary inline mx-auto'>My Resume</h1>
+      <div className='flex justify-center w-full'>
+        <h1 className='inline mx-auto text-3xl font-bold text-center border-b-2 font-jetBrains border-primary'>My Resume</h1>
       </div>
       <div className='grid grid-cols-12 md:px-10 px-4 lg:px-24 py-10 gap-6 md:max-h-[60vh]'>
-        <div className='md:col-span-4 col-span-12   py-6 px-4 rounded-lg shadow-md  bg-secondary'>
+        <div className='col-span-12 px-4 py-6 rounded-lg shadow-md md:col-span-4 bg-secondary'>
           <div>
-            <h1 className='font-jetBrains text-3xl font-bold'>Why Hire Me?</h1>
+            <h1 className='text-3xl font-bold font-jetBrains'>Why Hire Me?</h1>
           </div>
           <div className='mt-4'>
             <p className='font-jetBrains'>Motivated and innovative tech professional with a passion for digital solutions.</p>
