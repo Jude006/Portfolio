@@ -65,7 +65,7 @@ const About = () => {
           >
             <div className="flex flex-col items-center gap-2 text-center">
               <p className="text-2xl font-bold md:text-3xl font-jetBrains">
-                02+
+                03+
               </p>
               <p>
                 Years of  
@@ -75,7 +75,7 @@ const About = () => {
             </div> 
             <div className="flex flex-col items-center gap-2 text-center">
               <p className="text-2xl font-bold md:text-3xl font-jetBrains">
-                18
+                25
               </p>
               <p> 
                 Completed

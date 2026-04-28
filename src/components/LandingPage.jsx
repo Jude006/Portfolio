@@ -11,14 +11,14 @@ const LandingPage = () => {
   const [projectsCount, setProjectsCount] = useState(0);
 
   useEffect(() => {
-    const experienceTarget = 2;
+    const experienceTarget = 3;
     const experienceInterval = setInterval(() => {
       setExperienceCount((prev) => (prev < experienceTarget ? prev + 1 : prev));
       if (experienceCount === experienceTarget)
         clearInterval(experienceInterval);
     }, 500);
 
-    const commitTarget = 44;
+    const commitTarget = 53;
     const commitInterval = setInterval(() => {
       setCommitCount((prev) => (prev < commitTarget ? prev + 1 : prev));
       if (commitCount === commitTarget) clearInterval(commitInterval);
@@ -33,7 +33,7 @@ const LandingPage = () => {
         clearInterval(technologiesInterval);  
     }, 150);
 
-    const projectsTarget = 18;
+    const projectsTarget = 25;
     const projectsInterval = setInterval(() => {
       setProjectsCount((prev) => (prev < projectsTarget ? prev + 1 : prev));
       if (projectsCount === projectsTarget) clearInterval(projectsInterval);

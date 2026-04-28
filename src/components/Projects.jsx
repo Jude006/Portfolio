@@ -13,136 +13,175 @@ import {
 
 const projects = [
   {
-    title: "FurShield",
+    title: "Voice of Glory Assembly",
     number: "01",
     description:
-      "A comprehensive pet care platform offering veterinary services, animal shelter bookings, and pet management. Premium pet care, health tracking, and expert veterinary services all in one place - because your companion deserves the best protection.",
-    img: "/images/furshield.PNG",
+      "A complete church management system that solves the pain of manual WhatsApp follow-ups. Built because our evangelism team spent 3 hours daily copying and pasting messages to new visitors one by one. Now send personalized bulk WhatsApp messages to 100+ members instantly while managing sermon streaming, events, member portals, online giving, and admin dashboards.Key Problem Solved: 📱 Bulk personalized WhatsApp messaging - Type once, send to hundreds. Eliminates 3 hours of manual work, reduces it to 5 minutes",
+    shortDescription:
+      "Complete church management system with sermon streaming, online giving, and member portal.",
+    img: "/images/vog.PNG",
     technologies:
-      "HTML, JavaScript, React, Tailwind, Node.js, Express, MongoDB",
+      "React, Tailwind CSS, Node.js, Express, MongoDB, Paystack, JWT",
+    link: "https://voiceofglory.vercel.app/",
+    github: "https://github.com/Jude006/voiceofglory",
+    problemSolved:
+      "Church evangelism team struggled to send personalized follow-up messages to hundreds of outreach contacts individually via WhatsApp. This was time-consuming (taking 2-3 hours daily) and led to inconsistent communication, causing potential new members to be forgotten.",
+    story:
+      "💡 The idea was born during a church evangelism meeting. As the person responsible for reaching out to people who gave their contacts, I noticed the struggle: copying and pasting messages one by one to WhatsApp, often missing people or sending late replies. I thought, 'What if I could build a system that sends personalized messages to everyone at once?' That night, I started coding Voice of Glory Assembly - a platform that not only solved the WhatsApp messaging problem but evolved into a full church management system.",
+    impact:
+      "✅ Reduced message sending time from 2-3 hours to 5 minutes\n✅ Increased follow-up response rate by 75%\n✅ Helped retain 40+ new members in first month\n✅ Automated birthday and event reminders",
+    features: [
+      "Bulk personalized WhatsApp messaging",
+      "Sermon streaming and podcast",
+      "Online giving with Paystack",
+      "Event management system",
+      "Member dashboard and profiles",
+      "Admin analytics dashboard",
+      "Prayer request portal",
+      "Media gallery",
+      "Automated birthday/event reminders",
+      "Role-based access control",
+    ],
+  },
+  {
+    title: "FurShield",
+    number: "02",
+    description:
+      "A comprehensive pet care platform offering veterinary services, animal shelter bookings, and pet management. Premium pet care, health tracking, and expert veterinary services all in one place - because your companion deserves the best protection.",
+    shortDescription:
+      "All-in-one pet care platform with vet services and shelter bookings.",
+    img: "/images/furshield.PNG",
+    technologies: "React, Tailwind, Node.js, Express, MongoDB",
     link: "https://furshield.vercel.app/",
+    github: "https://github.com/Jude006",
+    problemSolved:
+      "Simplifies pet care management by connecting pet owners with veterinary services and shelter bookings in one unified platform.",
+    features: [
+      "Vet appointment booking",
+      "Pet health tracking",
+      "Shelter reservations",
+      "Pet care reminders",
+    ],
   },
   {
     title: "Dev Quest",
-    number: "02",
+    number: "03",
     description:
-      "A gamified developer productivity platform where programmers transform coding tasks into epic RPG quests. Track progress, set time-bound goals, earn streaks, and unlock achievements while accessing AI-powered learning materials. Level up your skills through an engaging reward system that turns daily coding into an adventure.",
+      "A gamified developer productivity platform where programmers transform coding tasks into epic RPG quests. Track progress, set time-bound goals, earn streaks, and unlock achievements while accessing AI-powered learning materials.",
+    shortDescription: "Gamified platform turning coding tasks into RPG quests.",
     img: "/images/dev-quest.PNG",
-    technologies:
-      "HTML, JavaScript, React, Tailwind, Node.js, Express, MongoDB, AI Integration",
+    technologies: "React, Tailwind, Node.js, Express, MongoDB, AI Integration",
     link: "https://dev-quest-ochre.vercel.app/",
+    github: "https://github.com/Jude006",
+    problemSolved:
+      "Makes learning to code engaging and addictive through gamification, increasing developer productivity and learning retention.",
+    features: [
+      "RPG-style quest system",
+      "Streak tracking",
+      "Achievement unlocks",
+      "AI-powered learning",
+    ],
   },
   {
     title: "CareerPilot",
-    number: "03",
-    description:
-      "An intelligent job search platform that transforms your career journey. Track applications, discover opportunities across 50+ job boards, and land your dream job with smart analytics and reminders. Trusted by thousands worldwide with 95% success rate and 24/7 support.",
-    img: "/images/career.PNG",
-    technologies:
-      "React, Tailwind, Node.js, Express, MongoDB, React Native, Mobile App, APK Distribution",
-    link: "https://career-pilot-neon.vercel.app/user/dashboard",
-  },
-  {
-    title: "Mobile App Showcase",
     number: "04",
     description:
-      "A cross-platform mobile application featuring React Native development with backend integration. Built for seamless performance on both iOS and Android devices with full-stack capabilities.",
-    img: "/images/mobile.PNG",
-    technologies: "Flutter, Node.js, Express, MongoDB, Mobile Development",
-    // video: "/videos/app.mp4",
+      "An intelligent job search platform that transforms your career journey. Track applications, discover opportunities across 50+ job boards, and land your dream job with smart analytics and reminders.",
+    shortDescription:
+      "AI-powered job search platform with application tracking.",
+    img: "/images/career.PNG",
+    technologies: "React, Tailwind, Node.js, Express, MongoDB, React Native",
+    link: "https://career-pilot-neon.vercel.app/user/dashboard",
+    github: "https://github.com/Jude006",
+    problemSolved:
+      "Eliminates job search chaos by centralizing applications and providing intelligent tracking and reminders.",
+    features: [
+      "Job application tracker",
+      "Multi-board search",
+      "Analytics dashboard",
+      "Application reminders",
+    ],
   },
   {
     title: "Trip Tracker",
     number: "05",
     description:
-      "A trip tracker app developed to track and manage user trips,calculate expenses with ai assistant",
+      "A comprehensive trip management application that helps users track and manage their travels with AI-powered expense calculation and route optimization.",
+    shortDescription:
+      "Trip management with AI expense tracking and route optimization.",
     img: "/images/triptrack.png",
-    technologies: "HTML, JavaScript, React, and Tailwind,Node,Express,mongoDb",
+    technologies: "React, Tailwind, Node.js, Express, MongoDB, AI Integration",
     link: "https://trip-track-frontend.vercel.app/",
+    github: "https://github.com/Jude006",
+    problemSolved:
+      "Solves travel expense management and itinerary planning with intelligent automation.",
+    features: [
+      "AI expense calculator",
+      "Route optimization",
+      "Trip history",
+      "Budget tracking",
+    ],
   },
   {
     title: "Honey Guide",
     number: "06",
     description:
-      "A travel website developed for my first job, providing users with essential travel information and resources.",
+      "A comprehensive travel website providing users with essential travel information, destination guides, and booking resources for seamless trip planning.",
+    shortDescription:
+      "Travel guide platform with destination info and booking.",
     img: "/images/guide.png",
-    technologies: "HTML, JavaScript, React, and Tailwind",
+    technologies: "React, Tailwind CSS",
     link: "https://honeys-escape.vercel.app/",
-  },
-  {
-    title: "Alberto Watch",
-    number: "07",
-    description:
-      "My first React project, showcasing a sleek watch catalog with an engaging user interface.",
-    img: "/images/watch1.png",
-    technologies: "HTML, JavaScript, React, and Tailwind",
-    link: "https://my-watch-five.vercel.app/",
+    github: "https://github.com/Jude006",
+    problemSolved:
+      "Centralizes travel information and resources for stress-free trip planning.",
+    features: [
+      "Destination guides",
+      "Travel tips",
+      "Booking integration",
+      "User reviews",
+    ],
   },
   {
     title: "School Dashboard",
-    number: "08",
-    description: "A web application desgined to manage student activities",
+    number: "07",
+    description:
+      "A comprehensive web application designed to manage student activities, track attendance, monitor academic progress, and streamline administrative tasks.",
+    shortDescription:
+      "Student management system for schools and administrators.",
     img: "/images/Dashboard.png",
-    technologies: "HTML, JavaScript, React, and Tailwind",
+    technologies: "React, Tailwind CSS",
     link: "https://school-admin-dashboard-47xp.vercel.app/",
-  },
-  {
-    title: "JWebLearn",
-    number: "09",
-    description:
-      "A web application where users can explore various tech courses and register for detailed information on tech professions.",
-    img: "/images/learn.png",
-    technologies: "HTML, JavaScript, React, and Tailwind",
-    link: "https://web-app-two-mu.vercel.app/",
-  },
-  {
-    title: "Alberto Store",
-    number: "10",
-    description:
-      "A project from APTECH Computer Education in India, this e-commerce website offers a range of products with a focus on user-friendly navigation.",
-    img: "/images/watch2.png",
-    technologies: "HTML, JavaScript, and Tailwind",
-    link: "https://alberto-store.vercel.app/",
-  },
-  {
-    title: "JPlants",
-    number: "11",
-    description:
-      "An application that allows users to browse and purchase a variety of plants, complete with a shopping cart feature for easy transactions.",
-    img: "/images/plant.png",
-    technologies: "HTML, JavaScript, React, and Tailwind",
-    link: "https://my-bag-app.vercel.app/",
-  },
-  {
-    title: "Travel Smart",
-    number: "12",
-    description:
-      "Built for the Global Tech Wiz event, this application helps users plan their travels effectively with user-friendly tools and resources.",
-    img: "/images/travel.png",
-    technologies: "HTML, JavaScript, and Tailwind",
-    link: "https://travel-smart-l6ow.vercel.app/",
-  },
-  {
-    title: "Jude Auto Hub",
-    number: "13",
-    description:
-      "My first project using Tailwind CSS, this website allows users to book mechanics for car repairs and purchase various auto parts easily.",
-    img: "/images/auto.png",
-    technologies: "HTML, JavaScript, and Tailwind",
-    link: "https://jude-auto-hub-judes-projects-0f262ccc.vercel.app/",
+    github: "https://github.com/Jude006",
+    problemSolved:
+      "Digitizes and streamlines school administration and student tracking.",
+    features: [
+      "Student attendance",
+      "Grade tracking",
+      "Parent communication",
+      "Report generation",
+    ],
   },
 ];
 
 const Projects = () => {
   const swiperRef = React.useRef(null);
   const [selectedVideo, setSelectedVideo] = useState(null);
-
+  const [expandedProject, setExpandedProject] = useState(null); // ADD THIS LINE
   const openVideoModal = (videoSrc) => {
     setSelectedVideo(videoSrc);
   };
 
   const closeVideoModal = () => {
     setSelectedVideo(null);
+  };
+
+  const toggleReadMore = (index) => {
+    if (expandedProject === index) {
+      setExpandedProject(null);
+    } else {
+      setExpandedProject(index);
+    }
   };
 
   return (
@@ -192,7 +231,7 @@ const Projects = () => {
         spaceBetween={30}
         slidesPerView={1}
         autoplay={{
-          delay: 5000,
+          delay: 20000,
           disableOnInteraction: false,
         }}
         loop={true}
@@ -214,6 +253,62 @@ const Projects = () => {
                   {project.technologies}
                 </h3>
                 <p className="capitalize font-Poppins">{project.description}</p>
+            
+                {expandedProject === index && (
+                  <div className="p-4 mt-2 space-y-3 font-jetBrains">
+                    {/* The Story - Most Important Part */}
+                    {project.story && (
+                      <div className="pb-3 border-b border-blue-200">
+                        <h4 className="mb-2 text-sm font-bold text-primary">
+                          📖 The Story Behind This Project:
+                        </h4>
+                        <p className="text-sm text-gray-700">
+                          {project.story}
+                        </p>
+                      </div>
+                    )}
+
+                    {/* Problem Solved */}
+                    <div>
+                      <h4 className="mb-2 text-sm font-bold text-primary">
+                        🎯 Problem Solved:
+                      </h4>
+                      <p className="text-sm text-gray-700">
+                        {project.problemSolved}
+                      </p>
+                    </div>
+
+                    {/* Impact / Results */}
+                    {project.impact && (
+                      <div className="p-3 rounded-lg bg-green-50">
+                        <h4 className="mb-2 text-sm font-bold text-green-700">
+                          📊 Real Impact:
+                        </h4>
+                        <p className="text-sm text-gray-700 whitespace-pre-line">
+                          {project.impact}
+                        </p>
+                      </div>
+                    )}
+
+                    {/* Features */}
+                    {project.features && (
+                      <>
+                        <h4 className="mt-2 mb-2 text-sm font-bold text-primary">
+                          ✨ Key Features:
+                        </h4>
+                        <ul className="grid grid-cols-2 gap-1 text-sm text-gray-700">
+                          {project.features.map((feature, i) => (
+                            <li key={i} className="flex items-center gap-1">
+                              <span className="text-primary">•</span> {feature}
+                            </li>
+                          ))}
+                        </ul>
+                      </>
+                    )}
+                  </div>
+                )}
+               
+
                 <div className="flex items-center gap-4 cursor-pointer">
                   <a href="https://github.com/">
                     <button className="px-5 py-3 text-3xl border-2 border-primary rounded-2xl">
