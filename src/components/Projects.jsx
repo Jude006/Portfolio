@@ -13,17 +13,86 @@ import {
 
 const projects = [
   {
-    title: "Voice of Glory Assembly",
+    title: "Popsin Footwears",
     number: "01",
     description:
-      "A complete church management system that solves the pain of manual WhatsApp follow-ups. Built because our evangelism team spent 3 hours daily copying and pasting messages to new visitors one by one. Now send personalized bulk WhatsApp messages to 100+ members instantly while managing sermon streaming, events, member portals, online giving, and admin dashboards.Key Problem Solved: 📱 Bulk personalized WhatsApp messaging - Type once, send to hundreds. Eliminates 3 hours of manual work, reduces it to 5 minutes",
+      "A premium shoe brand website showcasing corporate shoes and loafers. Customers can browse products, view detailed images, and order directly via WhatsApp. Built to help the brand establish a professional online presence and reach more customers.",
+    shortDescription: "Premium shoe brand website with WhatsApp ordering.",
+    img: "/images/popson.PNG",
+    technologies: "React, Tailwind CSS, Vercel",
+    link: "https://popson-footwear.vercel.app/",
+    github: "https://github.com/Jude006",
+    problemSolved:
+      "The shoe brand had no online presence and relied solely on Instagram. Customers couldn't browse products easily or see prices. This website solved that by creating a professional digital storefront that works 24/7.",
+    impact:
+      "✅ Gave the brand a professional online presence\n✅ Customers can now browse shoes anytime, anywhere\n✅ WhatsApp ordering makes it easy for customers to buy\n✅ Built trust and credibility for the brand",
+    features: [
+      "Product showcase with image slider",
+      "WhatsApp ordering integration",
+      "Corporate shoes and loafers display",
+      "Professional brand presence",
+      "Mobile responsive design",
+      "Contact form for inquiries",
+    ],
+  },
+  {
+    title: "DarlingTee Phones",
+    number: "02",
+    description:
+      "A complete phone store website where customers can browse iPhones and Samsung phones, view product details, and order via Telegram. Includes a full admin dashboard for product management, order tracking, and customer management.",
+    shortDescription: "Phone store with admin dashboard and Telegram ordering.",
+    img: "/images/darlingtee.PNG",
+    technologies: "React, Tailwind CSS, Node.js, Express, MongoDB",
+    link: "http://darlingtee-phones.vercel.app/",
+    github: "https://github.com/Jude006",
+    problemSolved:
+      "The phone dealer relied solely on Instagram and WhatsApp for sales. This was chaotic and hard to manage. The website provides a professional storefront with an admin dashboard to manage products, orders, and customers efficiently.",
+    impact:
+      "✅ Admin can manage products easily\n✅ Track orders and customers\n✅ Professional storefront 24/7\n✅ Reduced chaos from Instagram-only sales",
+    features: [
+      "Product management dashboard",
+      "Order tracking system",
+      "Customer management",
+      "Telegram ordering integration",
+      "Admin analytics",
+      "Product categories (iPhone, Samsung)",
+      "Product detail pages",
+    ],
+  },
+  {
+    title: "Echoes Creative",
+    number: "03",
+    description:
+      "A creative agency website offering web development, writing, social media management, and brand growth services. Designed to showcase the agency's capabilities and attract clients who need creative and digital solutions.",
+    shortDescription: "Creative agency website for digital services.",
+    img: "/images/echoes.PNG",
+    technologies: "React, Tailwind CSS, Vercel",
+    link: "https://echoes-creative.vercel.app/",
+    github: "https://github.com/Jude006",
+    problemSolved:
+      "The creative agency needed a professional online presence to attract clients. This website showcases their services, builds trust, and makes it easy for potential clients to contact them.",
+    impact:
+      "✅ Professional brand presence\n✅ Showcases all services clearly\n✅ Easy client contact\n✅ Built credibility for the agency",
+    features: [
+      "Service showcase (Web Dev, Writing, Social Media)",
+      "Brand growth services",
+      "Client contact form",
+      "Professional design",
+      "Mobile responsive",
+    ],
+  },
+  {
+    title: "Voice of Glory Assembly",
+    number: "04",
+    description:
+      "A complete church management system that solves the pain of manual WhatsApp follow-ups. Built because our evangelism team spent 3 hours daily copying and pasting messages to new visitors one by one. Now send personalized bulk WhatsApp messages to 100+ members instantly while managing sermon streaming, events, member portals, online giving, and admin dashboards.",
     shortDescription:
       "Complete church management system with sermon streaming, online giving, and member portal.",
     img: "/images/vog.PNG",
     technologies:
       "React, Tailwind CSS, Node.js, Express, MongoDB, Paystack, JWT",
     link: "https://voiceofglory.vercel.app/",
-    github: "https://github.com/Jude006/voiceofglory",
+    github: "https://github.com/Jude006",
     problemSolved:
       "Church evangelism team struggled to send personalized follow-up messages to hundreds of outreach contacts individually via WhatsApp. This was time-consuming (taking 2-3 hours daily) and led to inconsistent communication, causing potential new members to be forgotten.",
     story:
@@ -45,7 +114,7 @@ const projects = [
   },
   {
     title: "FurShield",
-    number: "02",
+    number: "05",
     description:
       "A comprehensive pet care platform offering veterinary services, animal shelter bookings, and pet management. Premium pet care, health tracking, and expert veterinary services all in one place - because your companion deserves the best protection.",
     shortDescription:
@@ -65,7 +134,7 @@ const projects = [
   },
   {
     title: "Dev Quest",
-    number: "03",
+    number: "06",
     description:
       "A gamified developer productivity platform where programmers transform coding tasks into epic RPG quests. Track progress, set time-bound goals, earn streaks, and unlock achievements while accessing AI-powered learning materials.",
     shortDescription: "Gamified platform turning coding tasks into RPG quests.",
@@ -84,7 +153,7 @@ const projects = [
   },
   {
     title: "CareerPilot",
-    number: "04",
+    number: "07",
     description:
       "An intelligent job search platform that transforms your career journey. Track applications, discover opportunities across 50+ job boards, and land your dream job with smart analytics and reminders.",
     shortDescription:
@@ -104,7 +173,7 @@ const projects = [
   },
   {
     title: "Trip Tracker",
-    number: "05",
+    number: "08",
     description:
       "A comprehensive trip management application that helps users track and manage their travels with AI-powered expense calculation and route optimization.",
     shortDescription:
@@ -124,7 +193,7 @@ const projects = [
   },
   {
     title: "Honey Guide",
-    number: "06",
+    number: "09",
     description:
       "A comprehensive travel website providing users with essential travel information, destination guides, and booking resources for seamless trip planning.",
     shortDescription:
@@ -144,7 +213,7 @@ const projects = [
   },
   {
     title: "School Dashboard",
-    number: "07",
+    number: "10",
     description:
       "A comprehensive web application designed to manage student activities, track attendance, monitor academic progress, and streamline administrative tasks.",
     shortDescription:
