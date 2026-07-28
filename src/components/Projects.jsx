@@ -35,15 +35,15 @@ const projects = [
       "Contact form for inquiries",
     ],
   },
-  {
-    title: "DarlingTee Phones",
+ {
+    title: "GentleX Phones",
     number: "02",
     description:
       "A complete phone store website where customers can browse iPhones and Samsung phones, view product details, and order via Telegram. Includes a full admin dashboard for product management, order tracking, and customer management.",
     shortDescription: "Phone store with admin dashboard and Telegram ordering.",
-    img: "/images/darlingtee.PNG",
+    img: "/images/image.png",
     technologies: "React, Tailwind CSS, Node.js, Express, MongoDB",
-    link: "http://darlingtee-phones.vercel.app/",
+    link: "https://gentle-x-v91r.vercel.app/",
     github: "https://github.com/Jude006",
     problemSolved:
       "The phone dealer relied solely on Instagram and WhatsApp for sales. This was chaotic and hard to manage. The website provides a professional storefront with an admin dashboard to manage products, orders, and customers efficiently.",
