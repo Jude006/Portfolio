@@ -1,434 +1,468 @@
-import React, { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
-  FaArrowAltCircleRight,
-  FaArrowCircleLeft,
+  motion,
+  AnimatePresence,
+  useReducedMotion,
+} from "framer-motion";
+import {
+  FaArrowRight,
+  FaCheckCircle,
+  FaChevronLeft,
+  FaChevronRight,
+  FaExternalLinkAlt,
   FaGithub,
   FaPlay,
   FaTimes,
 } from "react-icons/fa";
+// Move your existing `projects` array into src/data/projects.js
+// and export it:  export const projects = [ ... ];
+import { projects } from "../data/projects";
 
-const projects = [
-  {
-    title: "Popsin Footwears",
-    number: "01",
-    description:
-      "A premium shoe brand website showcasing corporate shoes and loafers. Customers can browse products, view detailed images, and order directly via WhatsApp. Built to help the brand establish a professional online presence and reach more customers.",
-    shortDescription: "Premium shoe brand website with WhatsApp ordering.",
-    img: "/images/popson.PNG",
-    technologies: "React, Tailwind CSS, Vercel",
-    link: "https://popson-footwear.vercel.app/",
-    github: "https://github.com/Jude006",
-    problemSolved:
-      "The shoe brand had no online presence and relied solely on Instagram. Customers couldn't browse products easily or see prices. This website solved that by creating a professional digital storefront that works 24/7.",
-    impact:
-      "✅ Gave the brand a professional online presence\n✅ Customers can now browse shoes anytime, anywhere\n✅ WhatsApp ordering makes it easy for customers to buy\n✅ Built trust and credibility for the brand",
-    features: [
-      "Product showcase with image slider",
-      "WhatsApp ordering integration",
-      "Corporate shoes and loafers display",
-      "Professional brand presence",
-      "Mobile responsive design",
-      "Contact form for inquiries",
-    ],
-  },
- {
-    title: "GentleX Phones",
-    number: "02",
-    description:
-      "A complete phone store website where customers can browse iPhones and Samsung phones, view product details, and order via Telegram. Includes a full admin dashboard for product management, order tracking, and customer management.",
-    shortDescription: "Phone store with admin dashboard and Telegram ordering.",
-    img: "/images/image.png",
-    technologies: "React, Tailwind CSS, Node.js, Express, MongoDB",
-    link: "https://gentle-x-v91r.vercel.app/",
-    github: "https://github.com/Jude006",
-    problemSolved:
-      "The phone dealer relied solely on Instagram and WhatsApp for sales. This was chaotic and hard to manage. The website provides a professional storefront with an admin dashboard to manage products, orders, and customers efficiently.",
-    impact:
-      "✅ Admin can manage products easily\n✅ Track orders and customers\n✅ Professional storefront 24/7\n✅ Reduced chaos from Instagram-only sales",
-    features: [
-      "Product management dashboard",
-      "Order tracking system",
-      "Customer management",
-      "Telegram ordering integration",
-      "Admin analytics",
-      "Product categories (iPhone, Samsung)",
-      "Product detail pages",
-    ],
-  },
-  {
-    title: "Echoes Creative",
-    number: "03",
-    description:
-      "A creative agency website offering web development, writing, social media management, and brand growth services. Designed to showcase the agency's capabilities and attract clients who need creative and digital solutions.",
-    shortDescription: "Creative agency website for digital services.",
-    img: "/images/echoes.PNG",
-    technologies: "React, Tailwind CSS, Vercel",
-    link: "https://echoes-creative.vercel.app/",
-    github: "https://github.com/Jude006",
-    problemSolved:
-      "The creative agency needed a professional online presence to attract clients. This website showcases their services, builds trust, and makes it easy for potential clients to contact them.",
-    impact:
-      "✅ Professional brand presence\n✅ Showcases all services clearly\n✅ Easy client contact\n✅ Built credibility for the agency",
-    features: [
-      "Service showcase (Web Dev, Writing, Social Media)",
-      "Brand growth services",
-      "Client contact form",
-      "Professional design",
-      "Mobile responsive",
-    ],
-  },
-  {
-    title: "Voice of Glory Assembly",
-    number: "04",
-    description:
-      "A complete church management system that solves the pain of manual WhatsApp follow-ups. Built because our evangelism team spent 3 hours daily copying and pasting messages to new visitors one by one. Now send personalized bulk WhatsApp messages to 100+ members instantly while managing sermon streaming, events, member portals, online giving, and admin dashboards.",
-    shortDescription:
-      "Complete church management system with sermon streaming, online giving, and member portal.",
-    img: "/images/vog.PNG",
-    technologies:
-      "React, Tailwind CSS, Node.js, Express, MongoDB, Paystack, JWT",
-    link: "https://voiceofglory.vercel.app/",
-    github: "https://github.com/Jude006",
-    problemSolved:
-      "Church evangelism team struggled to send personalized follow-up messages to hundreds of outreach contacts individually via WhatsApp. This was time-consuming (taking 2-3 hours daily) and led to inconsistent communication, causing potential new members to be forgotten.",
-    story:
-      "💡 The idea was born during a church evangelism meeting. As the person responsible for reaching out to people who gave their contacts, I noticed the struggle: copying and pasting messages one by one to WhatsApp, often missing people or sending late replies. I thought, 'What if I could build a system that sends personalized messages to everyone at once?' That night, I started coding Voice of Glory Assembly - a platform that not only solved the WhatsApp messaging problem but evolved into a full church management system.",
-    impact:
-      "✅ Reduced message sending time from 2-3 hours to 5 minutes\n✅ Increased follow-up response rate by 75%\n✅ Helped retain 40+ new members in first month\n✅ Automated birthday and event reminders",
-    features: [
-      "Bulk personalized WhatsApp messaging",
-      "Sermon streaming and podcast",
-      "Online giving with Paystack",
-      "Event management system",
-      "Member dashboard and profiles",
-      "Admin analytics dashboard",
-      "Prayer request portal",
-      "Media gallery",
-      "Automated birthday/event reminders",
-      "Role-based access control",
-    ],
-  },
-  {
-    title: "FurShield",
-    number: "05",
-    description:
-      "A comprehensive pet care platform offering veterinary services, animal shelter bookings, and pet management. Premium pet care, health tracking, and expert veterinary services all in one place - because your companion deserves the best protection.",
-    shortDescription:
-      "All-in-one pet care platform with vet services and shelter bookings.",
-    img: "/images/furshield.PNG",
-    technologies: "React, Tailwind, Node.js, Express, MongoDB",
-    link: "https://furshield.vercel.app/",
-    github: "https://github.com/Jude006",
-    problemSolved:
-      "Simplifies pet care management by connecting pet owners with veterinary services and shelter bookings in one unified platform.",
-    features: [
-      "Vet appointment booking",
-      "Pet health tracking",
-      "Shelter reservations",
-      "Pet care reminders",
-    ],
-  },
-  {
-    title: "Dev Quest",
-    number: "06",
-    description:
-      "A gamified developer productivity platform where programmers transform coding tasks into epic RPG quests. Track progress, set time-bound goals, earn streaks, and unlock achievements while accessing AI-powered learning materials.",
-    shortDescription: "Gamified platform turning coding tasks into RPG quests.",
-    img: "/images/dev-quest.PNG",
-    technologies: "React, Tailwind, Node.js, Express, MongoDB, AI Integration",
-    link: "https://dev-quest-ochre.vercel.app/",
-    github: "https://github.com/Jude006",
-    problemSolved:
-      "Makes learning to code engaging and addictive through gamification, increasing developer productivity and learning retention.",
-    features: [
-      "RPG-style quest system",
-      "Streak tracking",
-      "Achievement unlocks",
-      "AI-powered learning",
-    ],
-  },
-  {
-    title: "CareerPilot",
-    number: "07",
-    description:
-      "An intelligent job search platform that transforms your career journey. Track applications, discover opportunities across 50+ job boards, and land your dream job with smart analytics and reminders.",
-    shortDescription:
-      "AI-powered job search platform with application tracking.",
-    img: "/images/career.PNG",
-    technologies: "React, Tailwind, Node.js, Express, MongoDB, React Native",
-    link: "https://career-pilot-neon.vercel.app/user/dashboard",
-    github: "https://github.com/Jude006",
-    problemSolved:
-      "Eliminates job search chaos by centralizing applications and providing intelligent tracking and reminders.",
-    features: [
-      "Job application tracker",
-      "Multi-board search",
-      "Analytics dashboard",
-      "Application reminders",
-    ],
-  },
-  {
-    title: "Trip Tracker",
-    number: "08",
-    description:
-      "A comprehensive trip management application that helps users track and manage their travels with AI-powered expense calculation and route optimization.",
-    shortDescription:
-      "Trip management with AI expense tracking and route optimization.",
-    img: "/images/triptrack.png",
-    technologies: "React, Tailwind, Node.js, Express, MongoDB, AI Integration",
-    link: "https://trip-track-frontend.vercel.app/",
-    github: "https://github.com/Jude006",
-    problemSolved:
-      "Solves travel expense management and itinerary planning with intelligent automation.",
-    features: [
-      "AI expense calculator",
-      "Route optimization",
-      "Trip history",
-      "Budget tracking",
-    ],
-  },
-  {
-    title: "Honey Guide",
-    number: "09",
-    description:
-      "A comprehensive travel website providing users with essential travel information, destination guides, and booking resources for seamless trip planning.",
-    shortDescription:
-      "Travel guide platform with destination info and booking.",
-    img: "/images/guide.png",
-    technologies: "React, Tailwind CSS",
-    link: "https://honeys-escape.vercel.app/",
-    github: "https://github.com/Jude006",
-    problemSolved:
-      "Centralizes travel information and resources for stress-free trip planning.",
-    features: [
-      "Destination guides",
-      "Travel tips",
-      "Booking integration",
-      "User reviews",
-    ],
-  },
-  {
-    title: "School Dashboard",
-    number: "10",
-    description:
-      "A comprehensive web application designed to manage student activities, track attendance, monitor academic progress, and streamline administrative tasks.",
-    shortDescription:
-      "Student management system for schools and administrators.",
-    img: "/images/Dashboard.png",
-    technologies: "React, Tailwind CSS",
-    link: "https://school-admin-dashboard-47xp.vercel.app/",
-    github: "https://github.com/Jude006",
-    problemSolved:
-      "Digitizes and streamlines school administration and student tracking.",
-    features: [
-      "Student attendance",
-      "Grade tracking",
-      "Parent communication",
-      "Report generation",
-    ],
-  },
-];
+const EASE = [0.22, 1, 0.36, 1];
 
-const Projects = () => {
-  const swiperRef = React.useRef(null);
-  const [selectedVideo, setSelectedVideo] = useState(null);
-  const [expandedProject, setExpandedProject] = useState(null); // ADD THIS LINE
-  const openVideoModal = (videoSrc) => {
-    setSelectedVideo(videoSrc);
-  };
+/* ---------- helpers ---------- */
+const getCategory = (p) =>
+  p.category ||
+  (/react native/i.test(p.technologies)
+    ? "Mobile"
+    : /node|express|mongo|firebase/i.test(p.technologies)
+    ? "Full Stack"
+    : "Frontend");
 
-  const closeVideoModal = () => {
-    setSelectedVideo(null);
-  };
+const techList = (p) =>
+  (p.technologies || "").split(",").map((t) => t.trim()).filter(Boolean);
 
-  const toggleReadMore = (index) => {
-    if (expandedProject === index) {
-      setExpandedProject(null);
-    } else {
-      setExpandedProject(index);
-    }
-  };
+// accepts an array, or a "\n"-separated string with emoji bullets
+const toList = (v) =>
+  Array.isArray(v)
+    ? v
+    : v
+    ? v.split("\n").map((s) => s.replace(/^[✅•\-\s]+/, "").trim()).filter(Boolean)
+    : [];
+
+const cleanStory = (s) => (s || "").replace(/^\u{1F4A1}\s*/u, "");
+
+/* ---------- small pieces ---------- */
+const Chip = ({ children }) => (
+  <span className="px-3 py-1 text-xs font-medium rounded-full bg-primary/10 font-jetBrains text-primary">
+    {children}
+  </span>
+);
+
+const Block = ({ title, children }) => (
+  <div>
+    <h4 className="mb-2 text-sm font-bold font-jetBrains text-primary">{title}</h4>
+    {children}
+  </div>
+);
+
+/* ---------- project card ---------- */
+const ProjectCard = React.forwardRef(({ project, index, onOpen, reduce }, ref) => {
+  const tech = techList(project);
+  return (
+    <motion.article
+      ref={ref}
+      layout={!reduce}
+      initial={{ opacity: 0, y: 28 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, scale: 0.95 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.55, ease: EASE, delay: (index % 3) * 0.08 }}
+      className="group"
+    >
+      <button
+        type="button"
+        onClick={onOpen}
+        aria-label={`Open ${project.title} case study`}
+        className="flex flex-col w-full h-full overflow-hidden text-left transition-all duration-300 border border-gray-200 rounded-2xl bg-secondary hover:-translate-y-1 hover:border-primary/60 hover:shadow-xl hover:shadow-primary/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+      >
+        <div className="relative w-full overflow-hidden aspect-video bg-tertiary">
+          <img
+            src={project.img}
+            alt={`${project.title} preview`}
+            loading="lazy"
+            className="object-cover object-top w-full h-full transition-transform duration-700 ease-out group-hover:scale-105"
+          />
+          <span className="absolute px-3 py-1 text-xs font-semibold rounded-full shadow left-3 top-3 bg-secondary/95 font-jetBrains text-primary">
+            {getCategory(project)}
+          </span>
+        </div>
+
+        <div className="flex flex-col flex-1 gap-3 p-5">
+          <h3 className="text-lg font-bold font-jetBrains md:text-xl">
+            {project.title}
+          </h3>
+          <p className="text-sm text-gray-600 line-clamp-2 font-Poppins">
+            {project.shortDescription || project.description}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {tech.slice(0, 3).map((t) => (
+              <Chip key={t}>{t}</Chip>
+            ))}
+            {tech.length > 3 && (
+              <span className="px-1 py-1 text-xs text-gray-500 font-jetBrains">
+                +{tech.length - 3}
+              </span>
+            )}
+          </div>
+          <span className="inline-flex items-center gap-2 pt-2 mt-auto text-sm font-semibold font-jetBrains text-primary">
+            View case study
+            <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+          </span>
+        </div>
+      </button>
+    </motion.article>
+  );
+});
+ProjectCard.displayName = "ProjectCard";
+
+/* ---------- case-study modal ---------- */
+const CaseStudy = ({ project, position, total, onClose, onPrev, onNext }) => {
+  const [showVideo, setShowVideo] = useState(false);
+  const closeRef = useRef(null);
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    setShowVideo(false);
+    scrollRef.current?.scrollTo({ top: 0 });
+  }, [project.title]);
+
+  useEffect(() => {
+    closeRef.current?.focus();
+  }, []);
+
+  const impact = toList(project.impact);
+  const story = cleanStory(project.story);
 
   return (
-    <div className="px-4 py-16 md:px-8">
-      {/* Professional Mobile Video Modal */}
-      {selectedVideo && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70 h-[100%]">
-          <div className="relative w-full max-w-sm mx-4 bg-white shadow-2xl rounded-2xl md:max-w-md h-[90%]">
-            {/* Close Button */}
-            <button
-              className="absolute z-10 p-2 text-white transition-colors bg-red-500 rounded-full shadow-lg -top-3 -right-3 hover:bg-red-600"
-              onClick={closeVideoModal}
-            >
-              <FaTimes className="text-lg" />
-            </button>
-
-            {/* Video Container */}
-            <div className="p-3">
-              <video
-                controls
-                autoPlay
-                className="w-full rounded-lg"
-                src={selectedVideo}
-              >
-                Your browser does not support the video tag.
-              </video>
-            </div>
-
-            {/* Mobile Frame */}
-            <div className="absolute inset-0 border-4 border-gray-800 pointer-events-none rounded-xl h-[90%]"></div>
-          </div>
-        </div>
-      )}
-
-      <div className="flex flex-col justify-center gap-2">
-        <h1 className="inline-block mx-auto mb-2 text-3xl font-bold text-center border-b-2 font-jetBrains border-primary">
-          My Projects
-        </h1>
-        <p className="mb-6 text-lg text-center text-black font-Poppins">
-          A selection of projects I've worked on
-        </p>
-      </div>
-
-      {/* Swiper slider */}
-      <Swiper
-        modules={[Navigation, Autoplay]}
-        spaceBetween={30}
-        slidesPerView={1}
-        autoplay={{
-          delay: 20000,
-          disableOnInteraction: false,
-        }}
-        loop={true}
-        speed={1000}
-        className="w-full h-full"
-        ref={swiperRef}
+    <motion.div
+      className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 backdrop-blur-sm sm:items-center sm:p-6"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.25 }}
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${project.title} case study`}
+    >
+      <motion.div
+        ref={scrollRef}
+        className="relative max-h-[94vh] w-full overflow-y-auto overscroll-contain rounded-t-3xl bg-secondary shadow-2xl sm:max-w-4xl sm:rounded-3xl"
+        initial={{ y: 80, opacity: 0, scale: 0.98 }}
+        animate={{ y: 0, opacity: 1, scale: 1 }}
+        exit={{ y: 60, opacity: 0 }}
+        transition={{ duration: 0.45, ease: EASE }}
+        onClick={(e) => e.stopPropagation()}
       >
-        {projects.map((project, index) => (
-          <SwiperSlide key={index}>
-            <div className="grid grid-cols-12 gap-3 px-4 md:py-10 md:px-10 lg:px-24">
-              <div className="flex flex-col justify-center col-span-12 gap-4 px-2 py-4 md:col-span-5">
-                <span className="text-3xl stroke md:text-7xl">
-                  {project.number}
-                </span>
-                <h2 className="text-2xl font-semibold font-jetBrains">
-                  {project.title}
-                </h2>
-                <h3 className="text-lg font-Poppins text-primary">
-                  {project.technologies}
-                </h3>
-                <p className="capitalize font-Poppins">{project.description}</p>
-            
-                {expandedProject === index && (
-                  <div className="p-4 mt-2 space-y-3 font-jetBrains">
-                    {/* The Story - Most Important Part */}
-                    {project.story && (
-                      <div className="pb-3 border-b border-blue-200">
-                        <h4 className="mb-2 text-sm font-bold text-primary">
-                          📖 The Story Behind This Project:
-                        </h4>
-                        <p className="text-sm text-gray-700">
-                          {project.story}
-                        </p>
-                      </div>
-                    )}
+        {/* sticky top bar */}
+        <div className="sticky top-0 z-10 flex items-center justify-between px-5 py-3 border-b border-gray-100 bg-secondary/95 backdrop-blur">
+          <span className="text-xs text-gray-500 font-jetBrains">
+            Project {position} of {total}
+          </span>
+          <button
+            ref={closeRef}
+            type="button"
+            onClick={onClose}
+            aria-label="Close case study"
+            className="flex items-center justify-center text-gray-700 transition-colors rounded-full h-9 w-9 bg-tertiary hover:bg-primary hover:text-secondary focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+          >
+            <FaTimes />
+          </button>
+        </div>
 
-                    {/* Problem Solved */}
-                    <div>
-                      <h4 className="mb-2 text-sm font-bold text-primary">
-                        🎯 Problem Solved:
-                      </h4>
-                      <p className="text-sm text-gray-700">
-                        {project.problemSolved}
-                      </p>
-                    </div>
-
-                    {/* Impact / Results */}
-                    {project.impact && (
-                      <div className="p-3 rounded-lg bg-green-50">
-                        <h4 className="mb-2 text-sm font-bold text-green-700">
-                          📊 Real Impact:
-                        </h4>
-                        <p className="text-sm text-gray-700 whitespace-pre-line">
-                          {project.impact}
-                        </p>
-                      </div>
-                    )}
-
-                    {/* Features */}
-                    {project.features && (
-                      <>
-                        <h4 className="mt-2 mb-2 text-sm font-bold text-primary">
-                          ✨ Key Features:
-                        </h4>
-                        <ul className="grid grid-cols-2 gap-1 text-sm text-gray-700">
-                          {project.features.map((feature, i) => (
-                            <li key={i} className="flex items-center gap-1">
-                              <span className="text-primary">•</span> {feature}
-                            </li>
-                          ))}
-                        </ul>
-                      </>
-                    )}
-                  </div>
-                )}
-               
-
-                <div className="flex items-center gap-4 cursor-pointer">
-                  <a href="https://github.com/">
-                    <button className="px-5 py-3 text-3xl border-2 border-primary rounded-2xl">
-                      <FaGithub />
-                    </button>
-                  </a>
-                  {project.video ? (
-                    <button
-                      className="flex items-center gap-2 px-5 py-3 transition-colors border-2 border-primary rounded-2xl hover:bg-primary hover:text-white"
-                      onClick={() => openVideoModal(project.video)}
-                    >
-                      Watch Demo <FaPlay className="text-xl text-primary" />
-                    </button>
-                  ) : (
-                    <a href={project.link}>
-                      <button className="flex items-center gap-2 px-5 py-3 transition-colors border-2 border-primary rounded-2xl hover:bg-primary hover:text-white">
-                        Demo{" "}
-                        <FaArrowAltCircleRight className="text-xl text-primary" />
-                      </button>
-                    </a>
-                  )}
-                </div>
-              </div>
-              <div className="col-span-12 p-2 md:col-span-7 bg-secondary">
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={project.title}
+            initial={{ opacity: 0, x: 24 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -24 }}
+            transition={{ duration: 0.3, ease: EASE }}
+            className="p-5 md:p-8"
+          >
+            {/* media */}
+            <div className="overflow-hidden border border-gray-200 rounded-2xl bg-tertiary">
+              {showVideo && project.video ? (
+                <video
+                  controls
+                  autoPlay
+                  playsInline
+                  src={project.video}
+                  className="mx-auto max-h-[60vh] w-full bg-black object-contain"
+                />
+              ) : (
                 <img
                   src={project.img}
-                  alt={project.title}
-                  className="w-full h-[300px] md:h-[400px] object-contain rounded-lg"
+                  alt={`${project.title} preview`}
+                  className="object-contain w-full aspect-video"
                 />
+              )}
+            </div>
+
+            {/* title + actions */}
+            <div className="flex flex-col gap-4 mt-6 md:flex-row md:items-start md:justify-between">
+              <div>
+                <span className="text-xs font-semibold font-jetBrains text-primary">
+                  {getCategory(project)}
+                </span>
+                <h3 className="text-2xl font-bold tracking-tighter font-jetBrains md:text-4xl">
+                  {project.title}
+                </h3>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 font-jetBrains text-sm font-semibold text-secondary shadow-lg shadow-primary/30 transition-transform hover:-translate-y-0.5"
+                  >
+                    Live demo <FaExternalLinkAlt className="text-xs" />
+                  </a>
+                )}
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-3 text-sm font-semibold transition-colors border-2 rounded-md border-primary font-jetBrains text-primary hover:bg-primary hover:text-secondary"
+                  >
+                    <FaGithub /> GitHub
+                  </a>
+                )}
+                {project.video && (
+                  <button
+                    type="button"
+                    onClick={() => setShowVideo((v) => !v)}
+                    className="inline-flex items-center gap-2 px-5 py-3 text-sm font-semibold transition-colors border-2 rounded-md border-primary font-jetBrains text-primary hover:bg-primary hover:text-secondary"
+                  >
+                    <FaPlay className="text-xs" />
+                    {showVideo ? "Show preview" : "Watch demo"}
+                  </button>
+                )}
               </div>
             </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
 
-      {/* Custom Navigation Buttons */}
-      <div className="flex justify-center gap-10 mt-4">
-        <button
-          className="p-2 text-white transition-colors rounded-full bg-primary hover:bg-opacity-80"
-          onClick={() => swiperRef.current.swiper.slidePrev()}
+            {/* tech */}
+            <div className="flex flex-wrap gap-2 mt-5">
+              {techList(project).map((t) => (
+                <Chip key={t}>{t}</Chip>
+              ))}
+            </div>
+
+            {/* case study content */}
+            <div className="grid mt-8 text-sm leading-relaxed text-gray-700 gap-7 font-Poppins md:text-base">
+              <Block title="Overview">
+                <p>{project.description}</p>
+              </Block>
+
+              {story && (
+                <Block title="The story behind it">
+                  <p>{story}</p>
+                </Block>
+              )}
+
+              {project.problemSolved && (
+                <Block title="Problem solved">
+                  <p>{project.problemSolved}</p>
+                </Block>
+              )}
+
+              {impact.length > 0 && (
+                <div className="p-5 rounded-2xl bg-primary/5">
+                  <Block title="Impact">
+                    <ul className="grid gap-2">
+                      {impact.map((line) => (
+                        <li key={line} className="flex gap-3">
+                          <FaCheckCircle className="mt-1 shrink-0 text-primary" />
+                          <span>{line}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </Block>
+                </div>
+              )}
+
+              {project.features?.length > 0 && (
+                <Block title="Key features">
+                  <ul className="grid gap-x-6 gap-y-2 sm:grid-cols-2">
+                    {project.features.map((f) => (
+                      <li key={f} className="flex gap-3">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </Block>
+              )}
+            </div>
+          </motion.div>
+        </AnimatePresence>
+
+        {/* prev / next */}
+        <div className="flex items-center justify-between px-5 py-4 border-t border-gray-100 md:px-8">
+          <button
+            type="button"
+            onClick={onPrev}
+            disabled={total < 2}
+            className="inline-flex items-center gap-2 text-sm font-semibold font-jetBrains text-primary disabled:opacity-40"
+          >
+            <FaChevronLeft /> Previous
+          </button>
+          <button
+            type="button"
+            onClick={onNext}
+            disabled={total < 2}
+            className="inline-flex items-center gap-2 text-sm font-semibold font-jetBrains text-primary disabled:opacity-40"
+          >
+            Next <FaChevronRight />
+          </button>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+};
+
+/* ---------- section ---------- */
+const Projects = () => {
+  const reduce = useReducedMotion();
+  const [filter, setFilter] = useState("All");
+  const [active, setActive] = useState(null); // index within `visible`
+
+  const categories = useMemo(
+    () => ["All", ...Array.from(new Set(projects.map(getCategory)))],
+    []
+  );
+
+  const visible = useMemo(
+    () => (filter === "All" ? projects : projects.filter((p) => getCategory(p) === filter)),
+    [filter]
+  );
+
+  const close = useCallback(() => setActive(null), []);
+  const next = useCallback(
+    () => setActive((i) => (i === null ? i : (i + 1) % visible.length)),
+    [visible.length]
+  );
+  const prev = useCallback(
+    () => setActive((i) => (i === null ? i : (i - 1 + visible.length) % visible.length)),
+    [visible.length]
+  );
+
+  // lock page scroll + keyboard controls while the modal is open
+  useEffect(() => {
+    if (active === null) return;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e) => {
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowRight") next();
+      if (e.key === "ArrowLeft") prev();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [active, close, next, prev]);
+
+  const current = active !== null ? visible[active] : null;
+
+  return (
+    <section id="projects" className="px-4 py-16 bg-tertiary md:px-8 md:py-24">
+      <div className="max-w-6xl mx-auto">
+        {/* heading */}
+        <motion.div
+          className="flex flex-col items-center gap-4 text-center"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.7, ease: EASE }}
         >
-          <FaArrowCircleLeft className="text-2xl" />
-        </button>
-        <button
-          className="p-2 text-white transition-colors rounded-full bg-primary hover:bg-opacity-80"
-          onClick={() => swiperRef.current.swiper.slideNext()}
+          <h2 className="text-3xl font-bold tracking-tighter font-jetBrains md:text-5xl">
+            My Projects
+          </h2>
+          <motion.span
+            aria-hidden
+            className="w-16 h-1 origin-center rounded-full bg-primary"
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3, ease: EASE }}
+          />
+          <p className="max-w-lg text-sm text-gray-600 font-Poppins md:text-base">
+            Real products I've built for real clients. Open any project for the
+            full case study, live demo and source code.
+          </p>
+        </motion.div>
+
+        {/* filters */}
+        <div
+          className="flex flex-wrap justify-center gap-2 mt-10"
+          role="tablist"
+          aria-label="Filter projects"
         >
-          <FaArrowAltCircleRight className="text-2xl" />
-        </button>
+          {categories.map((c) => {
+            const on = filter === c;
+            const count = c === "All" ? projects.length : projects.filter((p) => getCategory(p) === c).length;
+            return (
+              <button
+                key={c}
+                role="tab"
+                aria-selected={on}
+                onClick={() => setFilter(c)}
+                className={`relative rounded-full px-4 py-2 font-jetBrains text-xs font-semibold transition-colors md:text-sm ${
+                  on ? "text-secondary" : "bg-secondary text-gray-700 hover:text-primary"
+                }`}
+              >
+                {on && (
+                  <motion.span
+                    layoutId="project-filter-pill"
+                    className="absolute inset-0 rounded-full bg-primary"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
+                <span className="relative">
+                  {c} <span className="opacity-70">{count}</span>
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* grid */}
+        <motion.div
+          layout={!reduce}
+          className="grid grid-cols-1 gap-6 mt-10 md:grid-cols-2 lg:grid-cols-3"
+        >
+          <AnimatePresence mode="popLayout">
+            {visible.map((p, i) => (
+              <ProjectCard
+                key={p.title}
+                project={p}
+                index={i}
+                reduce={reduce}
+                onOpen={() => setActive(i)}
+              />
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
-    </div>
+
+      <AnimatePresence>
+        {current && (
+          <CaseStudy
+            key="case-study"
+            project={current}
+            position={active + 1}
+            total={visible.length}
+            onClose={close}
+            onPrev={prev}
+            onNext={next}
+          />
+        )}
+      </AnimatePresence>
+    </section>
   );
 };
 
