@@ -84,7 +84,7 @@ const EDUCATION = [
 ];
 
 const SKILLS = [
-  { group: "Mobile", items: ["Flutter", "Dart", , "React Native"] },
+  { group: "Mobile", items: ["Flutter", "Dart","React Native"] },
   { group: "Frontend", items: ["HTML & CSS", "JavaScript", "React", "Next.js", "Tailwind CSS"] },
   { group: "Backend", items: ["Node.js", "Express", "Java","Django", "MongoDB", "PostgreSQL"] },
   { group: "Payments & services", items: ["Paystack", "CoralPay", "JWT", "Nodemailer"] },
